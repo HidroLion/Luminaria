@@ -13,15 +13,18 @@ public class Stats_Manager : MonoBehaviour
 
     void Start()
     {
-        MostrarSalud(0);
-        MostrarMana(0);
-        MostrarExp(0);        
+        Sliders[0].maxValue = Salud;
+        Sliders[1].maxValue = Exp;
+        Sliders[2].maxValue = Mana;
     }
 
     public void MostrarSalud(float deltaSalud)
     {
         Salud = Salud + deltaSalud;
         Sliders[0].value = Salud;
+
+        if (Salud <= 0)
+            GetComponent<Death_Controller>().Morir();
     }
 
     public void MostrarMana(float deltaMana)

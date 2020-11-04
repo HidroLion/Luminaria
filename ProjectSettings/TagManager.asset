@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terreno
   - Letal
+  - Enemigo
   layers:
   - Default
   - TransparentFX
